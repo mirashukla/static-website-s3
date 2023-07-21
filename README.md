@@ -19,4 +19,4 @@ To deploy the static website on S3, follow these steps:
 ```terraform init```
 4. **Customize the variables in variables.tf**
 5. **Deploy the infrastructure:** ```terraform apply```
-6. **Clean Up** ```terraform destory```
+6. **Clean Up** ```terraform destroy```
