@@ -14,7 +14,9 @@ Before you begin, make sure you have the following prerequisites:
 To deploy the static website on S3, follow these steps:
 
 1. **Fork this repository**
-2. **Initialize Terraform:**
-```terraform init```
+2. **Ensure you have aws backend set up**
 3. **Initialize Terraform:**
 ```terraform init```
+4. **Customize the variables in variables.tf**
+5. **Deploy the infrastructure:** ```terraform apply```
+6. **Clean Up** ```terraform destory```
