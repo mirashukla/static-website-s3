@@ -1,5 +1,11 @@
 # General Variables
 
+variable "name" {
+  description = "name of module"
+  type        = string
+  default     = "static-website-1"
+}
+
 variable "region" {
   description = "Default region for provider"
   type        = string
