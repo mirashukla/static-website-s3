@@ -23,7 +23,7 @@ resource "aws_s3_bucket_public_access_block" "static-website-bucket-block" {
 
 resource "aws_s3_bucket_policy" "static-website-bucket-policy" {
   bucket = aws_s3_bucket.static-website-bucket.id
-  policy = templatefile("s3-policy.json", { bucket = var.bucket_prefix })
+  policy = templatefile("${path.module}/s3-policy.json", { bucket = var.bucket_prefix })
 }
 
 resource "aws_s3_object" "static-website-bucket-index" {
