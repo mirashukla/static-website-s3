@@ -1,4 +1,4 @@
-# Static Website on AWS S3 using Terraform
+# Static Website on AWS S3 and Route53 using Terraform 
 
 This repository contains the Terraform code to deploy a static website on AWS S3. By following the instructions below, you can easily create a highly available and scalable static website on Amazon S3.
 
