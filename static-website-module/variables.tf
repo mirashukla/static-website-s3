@@ -24,6 +24,10 @@ variable "instance_type" {
 
 variable "bucket_prefix" {
   description = "prefix of s3 bucket for app data"
-  type        = string
+  type = string
 }
 
+variable "domain_name" {
+  description = "the domain name of the static website (same as bucket name)"
+  type        = string
+}

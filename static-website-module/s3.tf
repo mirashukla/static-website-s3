@@ -27,7 +27,8 @@ resource "aws_s3_bucket_policy" "static-website-bucket-policy" {
 }
 
 resource "aws_s3_object" "static-website-bucket-index" {
-  for_each     = fileset(path.module, "documents/*")
+
+  for_each     = fileset(path.root, "/documents/*")
   bucket       = aws_s3_bucket.static-website-bucket.id
   key          = replace(each.key,"documents/","")
   source       = each.value
