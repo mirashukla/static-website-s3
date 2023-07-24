@@ -25,6 +25,6 @@ module "static_website_1" {
   source        = "../static-website-module"
   name          = "static-website-1"
   # Input Variables
-  bucket_prefix = "mira-static-website-1" #must be the same as domain name
-  domain_name   = "mira-static-website-1"
+  bucket_prefix = "www.mira-static-website.com" #must be the same as domain name
+  domain_name   = "www.mira-static-website.com"
 }
