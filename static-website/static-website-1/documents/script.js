@@ -1,21 +1,39 @@
-// Get a reference to the button element
-const changeColorButton = document.getElementById('changeColorButton');
+const choices = ["rock", "paper", "scissors"];
 
-// Function to generate a random color
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
+document.querySelectorAll(".choice").forEach(button => {
+    button.addEventListener("click", playGame);
+});
+
+function playGame(event) {
+    const playerChoice = event.target.dataset.choice;
+    const computerChoice = getComputerChoice();
+
+    const result = getGameResult(playerChoice, computerChoice);
+    displayResult(result, playerChoice, computerChoice);
 }
 
-// Function to handle button click event
-function changeBackgroundColor() {
-  const newColor = getRandomColor();
-  document.body.style.backgroundColor = newColor;
+function getComputerChoice() {
+    const randomIndex = Math.floor(Math.random() * choices.length);
+    return choices[randomIndex];
 }
 
-// Add a click event listener to the button
-changeColorButton.addEventListener('click', changeBackgroundColor);
+function getGameResult(player, computer) {
+    if (player === computer) {
+        return "It's a tie!";
+    }
+
+    if (
+        (player === "rock" && computer === "scissors") ||
+        (player === "paper" && computer === "rock") ||
+        (player === "scissors" && computer === "paper")
+    ) {
+        return "You win!";
+    }
+
+    return "Computer wins!";
+}
+
+function displayResult(result, playerChoice, computerChoice) {
+    const resultElement = document.querySelector(".result");
+    resultElement.textContent = `You chose ${playerChoice}, the computer chose ${computerChoice}. ${result}`;
+}
