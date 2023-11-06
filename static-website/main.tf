@@ -27,4 +27,5 @@ module "static_website_1" {
   # Input Variables
   bucket_prefix = "www.mira-static-website.com" #must be the same as domain name
   domain_name   = "www.mira-static-website.com"
+  directory_name = "rockPaperScissors" #same as the directory with the files you
 }
